@@ -15,3 +15,10 @@ export const signupFormSchema = z
     message: "Passwords don't match",
     path: ['passwordConfirmation'],
   })
+
+export const orderFormSchema = z.object({
+  size_id: z.string().uuid(),
+  topping_ids: z.array(z.string().uuid()),
+  topping_quantities: z.array(z.number()),
+  special_notes: z.string().optional(),
+})

@@ -36,30 +36,37 @@ export type Database = {
     Tables: {
       order: {
         Row: {
-          address: string
+          address: string | null
           created_at: string
           id: string
+          size_id: string
           special_notes: string | null
-          total_price: unknown
           user_id: string
         }
         Insert: {
-          address: string
+          address?: string | null
           created_at?: string
           id?: string
+          size_id: string
           special_notes?: string | null
-          total_price: unknown
           user_id: string
         }
         Update: {
-          address?: string
+          address?: string | null
           created_at?: string
           id?: string
+          size_id?: string
           special_notes?: string | null
-          total_price?: unknown
           user_id?: string
         }
         Relationships: [
+          {
+            foreignKeyName: 'order_size_id_fkey'
+            columns: ['size_id']
+            isOneToOne: false
+            referencedRelation: 'pizza_size'
+            referencedColumns: ['id']
+          },
           {
             foreignKeyName: 'order_user_id_fkey'
             columns: ['user_id']
@@ -69,35 +76,38 @@ export type Database = {
           },
         ]
       }
-      pizza: {
+      order_topping: {
         Row: {
           id: string
           order_id: string
-          size_id: string
+          quantity: number
+          topping_id: string
         }
         Insert: {
           id?: string
           order_id: string
-          size_id: string
+          quantity: number
+          topping_id: string
         }
         Update: {
           id?: string
           order_id?: string
-          size_id?: string
+          quantity?: number
+          topping_id?: string
         }
         Relationships: [
           {
-            foreignKeyName: 'pizza_order_id_fkey'
+            foreignKeyName: 'order_topping_order_id_fkey'
             columns: ['order_id']
             isOneToOne: false
             referencedRelation: 'order'
             referencedColumns: ['id']
           },
           {
-            foreignKeyName: 'pizza_size_id_fkey'
-            columns: ['size_id']
+            foreignKeyName: 'order_topping_topping_id_fkey'
+            columns: ['topping_id']
             isOneToOne: false
-            referencedRelation: 'pizza_size'
+            referencedRelation: 'topping'
             referencedColumns: ['id']
           },
         ]
@@ -106,61 +116,25 @@ export type Database = {
         Row: {
           id: string
           num_included_toppings: number
-          price: unknown
-          price_per_additional_topping: unknown
+          price: number
+          price_per_additional_topping: number
           size: string
         }
         Insert: {
           id?: string
           num_included_toppings: number
-          price: unknown
-          price_per_additional_topping: unknown
+          price: number
+          price_per_additional_topping: number
           size: string
         }
         Update: {
           id?: string
           num_included_toppings?: number
-          price?: unknown
-          price_per_additional_topping?: unknown
+          price?: number
+          price_per_additional_topping?: number
           size?: string
         }
         Relationships: []
-      }
-      pizza_topping: {
-        Row: {
-          id: string
-          pizza_id: string
-          quantity: number
-          topping_id: string
-        }
-        Insert: {
-          id?: string
-          pizza_id: string
-          quantity: number
-          topping_id: string
-        }
-        Update: {
-          id?: string
-          pizza_id?: string
-          quantity?: number
-          topping_id?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: 'pizza_topping_pizza_id_fkey'
-            columns: ['pizza_id']
-            isOneToOne: false
-            referencedRelation: 'pizza'
-            referencedColumns: ['id']
-          },
-          {
-            foreignKeyName: 'pizza_topping_topping_id_fkey'
-            columns: ['topping_id']
-            isOneToOne: false
-            referencedRelation: 'topping'
-            referencedColumns: ['id']
-          },
-        ]
       }
       topping: {
         Row: {

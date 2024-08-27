@@ -23,7 +23,7 @@
   <nav
     class="flex w-full items-center justify-between border-b-1 border-iris-purple-100 bg-rice-200 p-4 text-slate-600"
   >
-    <a href="/" class="text-2xl font-bold">Pizza Shop</a>
+    <a href="/" class="text-2xl font-bold">Pluto's Pizza Shop</a>
 
     {#if user}
       <a href="/logout" data-sveltekit-preload-data="tap" data-sveltekit-reload>
