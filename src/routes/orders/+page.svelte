@@ -49,7 +49,7 @@
             {#if order.order_topping.length > 0}
               <p class="text-sm">
                 Toppings: {order.order_topping
-                  .map((topping) => topping.topping?.name)
+                  .map((topping) => `${topping.topping?.name} x${topping.quantity}`)
                   .join(', ')}
               </p>
             {/if}
