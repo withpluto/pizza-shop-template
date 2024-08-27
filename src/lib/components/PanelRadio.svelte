@@ -2,6 +2,7 @@
   import Panel from '$lib/components/Panel.svelte'
   import { twMerge } from 'tailwind-merge'
 
+  // eslint-disable-next-line no-undef
   type T = $$Generic
 
   export let name: string
