@@ -14,7 +14,7 @@
     "db:start": "supabase start",
     "db:stop": "supabase stop",
     "db:reset": "supabase db reset",
-    "db:migrate": "supabase db migrate",
+    "db:migrate": "supabase migration new",
     "db:typegen": "supabase gen types typescript --local > ./src/lib/database.ts",
     "db:seed": "supabase db seed"
   },

@@ -1,38 +1,92 @@
-# create-svelte
+# Technical Test - Pluto's Pizza Shop
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+Buongiorno!
 
-## Creating a project
+Congratulations on passing the first stage of your interview! The next stage is a
+technical test, and you’ve been tasked with creating the order page for Pluto’s Pizza
+Shop, the most popular pizza joint in all of London.
 
-If you're seeing this, you've probably already done this step. Congrats!
+Pluto’s is famous for its made-to-order pizza, and thy've recently expanded into
+the world of online delivery. However, Head Chef Floris wants to make sure people
+ordering online can easily keep track of where their pizza is on its journey to
+their table.
+
+Your task is to extend the functionality of the existing Pluto's Pizza Shop
+app to include order tracking. Users should be able to see the status of their
+order, and be able to track the progress of their pizza as it moves through the
+various stages of its journey.
+
+## Your task
+
+Implement order tracking in the app. Customers should be able to see the status
+of their order, when it reached each stage of its journey, and whatever else you
+think is relevant.
+
+This is a product-thinking test as much as a technical one, so get creative!
+
+As a side note, you're welcome to make changes to any of the existing code to
+implement this functionality. If you see something that doesn't look right, it's
+very possible that something's been overlooked in the original design.
+
+## Getting up and running
+
+Pluto's Pizza Shop uses a stack that mirrors what we use here at Pluto. It's
+built with [SvelteKit](https://kit.svelte.dev/), and uses [Supabase](https://supabase.com/)
+to manage the database.
+
+Styling is done with [Tailwind](https://tailwindcss.com/), and end-to-end testing
+uses [Playwright](https://playwright.dev/) with [Supawright](https://github.com/isaacharrisholt/supawright).
+
+### Prerequisites
+
+- Node.js 18+
+- pnpm
+- Docker
+
+### Installation
+
+#### 1. Clone the repo
+
+Please make sure to _clone_ the repo, **not** fork it. Since the repo is public, GitHub
+will force all forks to be public. This could give other candidates an advantage over
+you if they're able to see your code.
+
+We recommend cloning the repo to your local machine, then changing the remote URL
+to point to a private repository on GitHub that you own.
 
 ```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
+git clone https://github.com/withpluto/pizza-shop-template.git
+cd pizza-shop-template
+git remote set-url origin git@github.com:your-username/pizza-shop-template.git
 ```
 
-## Developing
+#### 2.
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Install dependendies with `pnpm install`.
 
-```bash
-npm run dev
+#### 3.
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+Start the Supabase database with `pnpm db:start`.
 
-## Building
+### Running the app
 
-To create a production version of your app:
+Once you've installed the dependencies, you can run the app with `pnpm dev`.
 
-```bash
-npm run build
-```
+You can preview the production build with `pnpm preview`.
 
-You can preview the production build with `npm run preview`.
+### Database management
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+Add a database migration with `pnpm db:migrate <migration_name>`. This will create a new
+migration file in the `supabase/migrations` directory.
+
+## Submitting your code
+
+Submit your code by inviting `isaacharrisholt` to your repo (if private), and emailing
+`floris@withpluto.com` with the link to your repo.
+
+Please make sure it's ready before you submit, as any changes you make to the code
+after submitting will be rejected.
+
+## Getting help
+
+If you have any questions, please email `floris@withpluto.com`.
