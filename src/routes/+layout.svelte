@@ -21,7 +21,7 @@
 
 <div class="flex min-h-screen flex-col">
   <nav
-    class="border-b-1 flex w-full items-center justify-between border-iris-purple-100 bg-rice-200 p-4 text-slate-600"
+    class="flex w-full items-center justify-between border-b-1 border-iris-purple-100 bg-rice-200 p-4 text-slate-600"
   >
     <a href="/" class="text-2xl font-bold">Pizza Shop</a>
 
