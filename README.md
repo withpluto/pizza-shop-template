@@ -1,81 +1,98 @@
-# Turborepo starter
+# Technical Test - Pluto's Pizza Shop
 
-This is an official starter Turborepo.
+Buongiorno!
 
-## Using this example
+Congratulations on passing the first stage of your interview! The next stage is a
+technical test, and you’ve been tasked with creating the order page for Pluto’s Pizza
+Shop, the most popular pizza joint in all of London.
 
-Run the following command:
+Pluto’s is famous for its made-to-order pizza, and thy've recently expanded into
+the world of online delivery. However, Head Chef Floris wants to make sure people
+ordering online can easily keep track of where their pizza is on its journey to
+their table.
 
-```sh
-npx create-turbo@latest
+Your task is to extend the functionality of the existing Pluto's Pizza Shop
+app to include order tracking. Users should be able to see the status of their
+order, and be able to track the progress of their pizza as it moves through the
+various stages of its journey.
+
+## Your task
+
+Implement order tracking in the app. Customers should be able to see the status
+of their order, when it reached each stage of its journey, and whatever else you
+think is relevant.
+
+This is a product-thinking test as much as a technical one, so get creative!
+
+As a side note, you're welcome to make changes to any of the existing code to
+implement this functionality. If you see something that doesn't look right, it's
+very possible that something's been overlooked in the original design.
+
+## Getting up and running
+
+Pluto's Pizza Shop uses a stack that mirrors what we use here at Pluto. It's
+built with [SvelteKit](https://kit.svelte.dev/), and uses [Supabase](https://supabase.com/)
+to manage the database.
+
+Styling is done with [Tailwind](https://tailwindcss.com/), and end-to-end testing
+uses [Playwright](https://playwright.dev/) with [Supawright](https://github.com/isaacharrisholt/supawright).
+
+### Prerequisites
+
+- Node.js 18+
+- pnpm
+- Docker
+
+### Installation
+
+#### 1. Clone the repo
+
+Please make sure to _clone_ the repo, **not** fork it. Since the repo is public, GitHub
+will force all forks to be public. This could give other candidates an advantage over
+you if they're able to see your code.
+
+We recommend cloning the repo to your local machine, then changing the remote URL
+to point to a private repository on GitHub that you own.
+
+```bash
+git clone https://github.com/withpluto/pizza-shop-template.git
+cd pizza-shop-template
+git remote set-url origin git@github.com:your-username/pizza-shop-template.git
 ```
 
-## What's inside?
+#### 2. Install dependencies
 
-This Turborepo includes the following packages/apps:
-
-### Apps and Packages
-
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm build
+```bash
+pnpm install
 ```
 
-### Develop
+#### 3. Start the Supabase database
 
-To develop all apps and packages, run the following command:
+Start the Supabase database with `pnpm db:start`. This may take a while to start the
+first time around as Supabase is comprised a number of services.
 
-```
-cd my-turborepo
-pnpm dev
-```
+### Running the app
 
-### Remote Caching
+Once you've installed the dependencies, you can run the app with `pnpm dev`.
 
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+You can preview the production build with `pnpm preview`.
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
+Both will automatically read the environment variables from the `.env` file using
+`dotenv-cli`.
 
-```
-cd my-turborepo
-npx turbo login
-```
+### Database management
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+Add a database migration with `pnpm db:migrate <migration_name>`. This will create a new
+migration file in the `supabase/migrations` directory.
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
+## Submitting your code
 
-```
-npx turbo link
-```
+Submit your code by inviting `isaacharrisholt` to your repo (if private), and emailing
+`floris@withpluto.com` with the link to your repo.
 
-## Useful Links
+Please make sure it's ready before you submit, as any changes you make to the code
+after submitting will be rejected.
 
-Learn more about the power of Turborepo:
+## Getting help
 
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+If you have any questions, please email `floris@withpluto.com`.
