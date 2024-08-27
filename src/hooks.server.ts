@@ -5,8 +5,13 @@ import type { RequestEvent } from '@sveltejs/kit'
 
 import { PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY } from '$env/static/public'
 import { PRIVATE_SUPABASE_SERVICE_ROLE_KEY } from '$env/static/private'
+import type { SupabaseClient } from '@supabase/supabase-js'
+import type { Database } from '$lib/database'
 
-function createSupabaseClient(event: RequestEvent, key: string) {
+function createSupabaseClient(
+  event: RequestEvent,
+  key: string,
+): SupabaseClient<Database> {
   return createServerClient(PUBLIC_SUPABASE_URL, key, {
     cookies: {
       getAll: () => event.cookies.getAll(),
