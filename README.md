@@ -60,19 +60,25 @@ cd pizza-shop-template
 git remote set-url origin git@github.com:your-username/pizza-shop-template.git
 ```
 
-#### 2.
+#### 2. Install dependencies
 
-Install dependendies with `pnpm install`.
+```bash
+pnpm install
+```
 
-#### 3.
+#### 3. Start the Supabase database
 
-Start the Supabase database with `pnpm db:start`.
+Start the Supabase database with `pnpm db:start`. This may take a while to start the
+first time around as Supabase is comprised a number of services.
 
 ### Running the app
 
 Once you've installed the dependencies, you can run the app with `pnpm dev`.
 
 You can preview the production build with `pnpm preview`.
+
+Both will automatically read the environment variables from the `.env` file using
+`dotenv-cli`.
 
 ### Database management
 
