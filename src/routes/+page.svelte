@@ -85,6 +85,7 @@
                 topping.quantity--
               }}
               class:text-gray-300={topping.quantity === 0}
+              data-testid="{topping.name.toLowerCase()}-minus"
             >
               <MinusCircleSolid16 />
             </button>
@@ -95,6 +96,7 @@
                 topping.quantity++
               }}
               class:text-gray-300={topping.quantity === 5}
+              data-testid="{topping.name.toLowerCase()}-plus"
             >
               <PlusCircleSolid16 />
             </button>
