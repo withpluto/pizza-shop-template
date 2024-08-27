@@ -6,7 +6,7 @@ Congratulations on passing the first stage of your interview! The next stage is 
 technical test, and you’ve been tasked with creating the order page for Pluto’s Pizza
 Shop, the most popular pizza joint in all of London.
 
-Pluto’s is famous for its made-to-order pizza, and thy've recently expanded into
+Pluto’s is famous for its made-to-order pizza, and they've recently expanded into
 the world of online delivery. However, Head Chef Floris wants to make sure people
 ordering online can easily keep track of where their pizza is on its journey to
 their table.
