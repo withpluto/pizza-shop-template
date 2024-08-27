@@ -21,12 +21,24 @@
 
 <div class="flex min-h-screen flex-col">
   <nav
-    class="flex w-full items-center justify-between border-b-1 border-iris-purple-100 bg-rice-200 p-4 text-slate-600"
+    class="grid w-full items-center border-b-1 border-iris-purple-100 bg-rice-200 p-4 text-slate-600 md:grid-cols-3"
   >
     <a href="/" class="text-2xl font-bold">Pluto's Pizza Shop</a>
 
+    <div class="flex flex-row items-center justify-center gap-4">
+      {#if user}
+        <a href="/" class="underline">Place order</a>
+        <a href="/orders" class="underline">Orders</a>
+      {/if}
+    </div>
+
     {#if user}
-      <a href="/logout" data-sveltekit-preload-data="tap" data-sveltekit-reload>
+      <a
+        href="/logout"
+        data-sveltekit-preload-data="tap"
+        data-sveltekit-reload
+        class="justify-self-end"
+      >
         <Button variant="tertiary" text="Logout" />
       </a>
     {/if}
