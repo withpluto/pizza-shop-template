@@ -28,6 +28,9 @@ As a side note, you're welcome to make changes to any of the existing code to
 implement this functionality. If you see something that doesn't look right, it's
 very possible that something's been overlooked in the original design.
 
+Please also implement any end-to-end tests you think are necessary to ensure
+your new code is stable and won't be broken by any future changes.
+
 ## Getting up and running
 
 Pluto's Pizza Shop uses a stack that mirrors what we use here at Pluto. It's
