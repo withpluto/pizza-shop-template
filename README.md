@@ -91,7 +91,7 @@ migration file in the `supabase/migrations` directory.
 ## Submitting your code
 
 Submit your code by inviting `isaacharrisholt` to your repo (if private), and emailing
-`floris@withpluto.com` with the link to your repo.
+`isaac@withpluto.com` with the link to your repo.
 
 Please make sure it's ready before you submit, as any changes you make to the code
 after submitting will be rejected.
