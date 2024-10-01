@@ -83,6 +83,14 @@ You can preview the production build with `pnpm preview`.
 Both will automatically read the environment variables from the `.env` file using
 `dotenv-cli`.
 
+The `.env` file itself can be created by copying `.env.example` and filling in the
+values. These can be found by running the following command once the database is
+running:
+
+```bash
+pnpm supabase status
+```
+
 ### Database management
 
 Add a database migration with `pnpm db:migrate <migration_name>`. This will create a new
